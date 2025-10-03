@@ -36,7 +36,7 @@ do
     do
         python -u run_longExp.py \
         --random_seed $random_seed \
-        --is_training 0 \
+        --is_training 1 \
         --root_path $root_path_name \
         --data_path $data_path_name \
         --model_id $model_id_name'_'$seq_len'_'$pred_len \
@@ -99,7 +99,7 @@ do
     do
         python -u run_longExp.py \
         --random_seed $random_seed \
-        --is_training 0 \
+        --is_training 1 \
         --root_path $root_path_name \
         --data_path $data_path_name \
         --model_id $model_id_name'_'$seq_len'_'$pred_len \
@@ -141,7 +141,7 @@ do
         mkdir ./logs/LausanneCity_"$data_version"/$target_node
     fi
     seq_len=96
-    model_name=MyTransformer_M2M
+    model_name=MyTransformer_M2M_exo
 
     root_path_name=/home/abgo/Data/LausanneCity/
     data_path_name=LausanneCity_v"$data_version".csv
@@ -163,7 +163,7 @@ do
     do
         python -u run_longExp.py \
         --random_seed $random_seed \
-        --is_training 0 \
+        --is_training 1 \
         --root_path $root_path_name \
         --data_path $data_path_name \
         --model_id $model_id_name'_'$seq_len'_'$pred_len \

@@ -52,14 +52,13 @@ class Exp_Main_exo(Exp_Basic):
         criterion = nn.MSELoss()
         return criterion
     
-    def compute_dtw(outputs, batch_y):
+    def compute_dtw(self, outputs, batch_y):
         """
         Computes the DTW-based hit rate for each batch element and signal.
 
         Parameters:
         - outputs: numpy array of shape [batch, signal_length, signal_number] (predictions)
         - batch_y: numpy array of shape [batch, signal_length, signal_number] (ground-truth)
-        - margin: float, absolute tolerance for hit classification
 
         Returns:
         - hit_rates: numpy array of shape [batch, signal_number], percentage of hits per batch-signal pair
@@ -697,7 +696,7 @@ class Exp_Main_exo(Exp_Basic):
 
                 outputs = outputs.detach().cpu().numpy()
                 batch_y = batch_y.detach().cpu().numpy()
-                
+
                 DTW_error_per_signal = self.compute_dtw(outputs, batch_y)
                 print(DTW_error_per_signal.shape)
 

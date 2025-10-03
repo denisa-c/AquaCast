@@ -16,7 +16,7 @@ do
         mkdir ./logs/synthesized_"$data_version"/$target_node
     fi
     seq_len=96
-    model_name=MyTransformer_M2M
+    model_name=MyTransformer_M2M_exo
 
     root_path_name=/home/abgo/Data/synthesized/
     data_path_name=synthesized_v"$data_version".csv
