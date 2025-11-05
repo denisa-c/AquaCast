@@ -14,7 +14,7 @@ do
         mkdir ./logs/LausanneCity_"$data_version"/$target_node
     fi
     seq_len=96
-    model_name=MyTransformer_M2M_exo
+    model_name=AquaCast
 
     root_path_name=/home/abgo/Data/LausanneCity/
     data_path_name=LausanneCity_v"$data_version".csv
@@ -77,7 +77,7 @@ do
         mkdir ./logs/LausanneCity_"$data_version"/$target_node
     fi
     seq_len=96
-    model_name=MyTransformer_M2M_exo
+    model_name=AquaCast
 
     root_path_name=/home/abgo/Data/LausanneCity/
     data_path_name=LausanneCity_v"$data_version".csv
@@ -141,7 +141,7 @@ do
         mkdir ./logs/LausanneCity_"$data_version"/$target_node
     fi
     seq_len=96
-    model_name=MyTransformer_M2M_exo
+    model_name=AquaCast
 
     root_path_name=/home/abgo/Data/LausanneCity/
     data_path_name=LausanneCity_v"$data_version".csv

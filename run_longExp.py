@@ -120,12 +120,8 @@ if __name__ == '__main__':
     print('Args in experiment:')
     print(args)
 
-    if args.des == 'Exp_exo':
-        Exp = Exp_Main_exo
-        print('Exogenous variables are used.')
-    else:
-        Exp = Exp_Main
-        print('Only indogenous variables are used.')
+    Exp = Exp_Main_exo
+    print('Exogenous variables are used.')
 
     if args.is_training:
         for ii in range(args.itr):

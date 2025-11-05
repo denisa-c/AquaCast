@@ -1,4 +1,4 @@
-__all__ = ['my_transformer_m2m_exo_cnn']
+__all__ = ['AquaCast']
 
 import torch
 import torch.nn as nn

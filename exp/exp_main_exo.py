@@ -1,6 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import PatchTST, my_transformer_m2m_exo
+from models import PatchTST, AquaCast
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop, visual_plot, visual_rain, visual_acc
 from utils.metrics import metric
 
@@ -28,7 +28,7 @@ class Exp_Main_exo(Exp_Basic):
     def _build_model(self):
         model_dict = {
             'PatchTST': PatchTST,
-            'MyTransformer_M2M_exo': my_transformer_m2m_exo,
+            'AquaCast': AquaCast,
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
@@ -103,7 +103,7 @@ class Exp_Main_exo(Exp_Basic):
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
                 # encoder - decoder
-                if 'TST' in self.args.model or 'My' in self.args.model:
+                if 'TST' in self.args.model or 'Aqua' in self.args.model:
                     if self.args.exo_future:
                         outputs = self.model(batch_x, exo_future)
                     else:
@@ -194,7 +194,7 @@ class Exp_Main_exo(Exp_Basic):
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
 
                 # encoder - decoder
-                if 'TST' in self.args.model or 'My' in self.args.model:
+                if 'TST' in self.args.model or 'Aqua' in self.args.model:
                     if self.args.exo_future:
                         outputs = self.model(batch_x, exo_future)
                     else:
@@ -311,7 +311,7 @@ class Exp_Main_exo(Exp_Basic):
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
                 # encoder - decoder
-                if 'TST' in self.args.model or 'My' in self.args.model:
+                if 'TST' in self.args.model or 'Aqua' in self.args.model:
                     if self.args.exo_future:
                         outputs = self.model(batch_x, exo_future)
                     else:
@@ -459,7 +459,7 @@ class Exp_Main_exo(Exp_Basic):
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
                 # encoder - decoder
-                if 'TST' in self.args.model or 'My' in self.args.model:
+                if 'TST' in self.args.model or 'Aqua' in self.args.model:
                     if self.args.exo_future:
                         outputs = self.model(batch_x, exo_future)
                     else:
@@ -651,7 +651,7 @@ class Exp_Main_exo(Exp_Basic):
                 # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
-                if 'TST' in self.args.model or 'My' in self.args.model:
+                if 'TST' in self.args.model or 'Aqua' in self.args.model:
                     if self.args.exo_future:
                         outputs = self.model(batch_x, exo_future)
                     else:
