@@ -103,6 +103,9 @@ if __name__ == '__main__':
         project="aquacast-history-length",
         config=vars(args)
     )
+    wandb.log({
+            "seq_len": args.seq_len
+        })
 
     # random seed
     fix_seed = args.random_seed

@@ -402,8 +402,8 @@ class Exp_Main_exo(Exp_Basic):
 
         # weights and biases logging
         wandb.log({
-            "test_mse": mse,
-            "test_mae": mae
+            "test_mse_final": mse,
+            "test_mae_final": mae
         })
 
         # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))

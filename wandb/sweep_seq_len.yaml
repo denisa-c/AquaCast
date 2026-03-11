@@ -1,0 +1,18 @@
+program: scripts/AquaCast/synthesized_wandb.sh
+name: seq-len-sweep
+method: grid
+
+metric:
+  name: val_loss
+  goal: minimize
+
+parameters:
+  seq_len:
+    # values: [96, 144, 192, 288]
+    values: [240, 336, 384]
+
+command:
+  - ${env}
+  - /bin/bash
+  - ${program}
+  - ${args_no_hyphens}
